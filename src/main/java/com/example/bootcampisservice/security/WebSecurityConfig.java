@@ -51,16 +51,16 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(r -> r
                         .requestMatchers("/authenticate", "/user/save").permitAll()
                         .requestMatchers("/user/**").authenticated()
-                        .requestMatchers("/feign/**").permitAll().anyRequest().authenticated()
+                        .requestMatchers("/wallet/**").authenticated()
+                        .requestMatchers("/feign/**").permitAll()
+                        .anyRequest().authenticated()
 
                 ).sessionManagement((s) -> s
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 ).exceptionHandling(
                         (a) -> a.authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 )
-                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
-
-        ;
+                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
         // Add a filter to validate the tokens with every request
 

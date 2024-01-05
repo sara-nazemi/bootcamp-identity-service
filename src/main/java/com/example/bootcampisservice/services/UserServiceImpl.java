@@ -39,7 +39,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserEntity,Long> implements
             throw new IdentityServiceException("phone-number-null");
         }
         entity.setPassword(bcryptEncoder.encode(entity.getPassword()));
-//        walletServiceCall.createWallet(jwtTokenUtil.generateToken(entity));
+        walletServiceCall.createWallet(jwtTokenUtil.generateToken(entity));
         return super.save(entity);
     }
 
