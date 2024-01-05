@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/feign")
 public class WalletController{
     @Autowired
-    private WalletServiceCallImpl walletServiceCall;
+    private WalletServiceCallFeignImpl walletServiceCall;
     @PostMapping("/create")
     public WalletDto createWallet(@RequestHeader String token) throws ServiceException {
         return walletServiceCall.createWallet(token);

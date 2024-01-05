@@ -4,10 +4,9 @@ import com.example.bootcampisservice.exception.IdentityServiceException;
 import com.example.bootcampisservice.models.entities.UserEntity;
 import com.example.bootcampisservice.repositories.UserRepository;
 import com.example.bootcampisservice.security.JwtTokenUtil;
-import com.example.bootcampisservice.services.serviceCall.WalletServiceCallImpl;
+import com.example.bootcampisservice.services.serviceCall.WalletServiceCallFeignImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,7 +24,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserEntity,Long> implements
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private WalletServiceCallImpl walletServiceCall;
+    private WalletServiceCallFeignImpl walletServiceCall;
 
     @Override
     protected JpaRepository<UserEntity, Long> getRepository() {
@@ -44,7 +43,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserEntity,Long> implements
     }
 
     //@Cacheable(cacheNames = "UserServiceImpl_findAll")
-    @Override
+    @Overridek
     public List<UserEntity> findAll() {
         return super.findAll();
     }
