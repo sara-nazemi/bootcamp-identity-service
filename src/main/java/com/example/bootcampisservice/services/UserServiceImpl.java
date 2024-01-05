@@ -43,7 +43,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserEntity,Long> implements
     }
 
     //@Cacheable(cacheNames = "UserServiceImpl_findAll")
-    @Overridek
+    @Override
     public List<UserEntity> findAll() {
         return super.findAll();
     }
