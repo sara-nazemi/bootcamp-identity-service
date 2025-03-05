@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.function.Function;
 
 @Component
@@ -76,6 +77,7 @@ public class JwtTokenUtil implements Serializable {
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY_TIME))
                 .signWith(SignatureAlgorithm.HS512, secret)
+                .setId(UUID.randomUUID().toString())
                 .compact();
     }
 

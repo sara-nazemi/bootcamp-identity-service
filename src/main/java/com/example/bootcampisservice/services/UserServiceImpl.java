@@ -4,7 +4,7 @@ import com.example.bootcampisservice.exception.IdentityServiceException;
 import com.example.bootcampisservice.models.entities.UserEntity;
 import com.example.bootcampisservice.repositories.UserRepository;
 import com.example.bootcampisservice.security.JwtTokenUtil;
-import com.example.bootcampisservice.services.serviceCall.WalletServiceCallFeignImpl;
+import com.example.bootcampisservice.services.feignServiceCall.WalletServiceCallFeignImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

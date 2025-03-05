@@ -1,4 +1,4 @@
-package com.example.bootcampisservice.services.serviceCall;
+package com.example.bootcampisservice.services.feignServiceCall;
 
 import com.example.bootcampisservice.models.dtoes.serviceCall.WalletDto;
 import org.hibernate.service.spi.ServiceException;

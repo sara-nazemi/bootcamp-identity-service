@@ -19,7 +19,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableMongoRepositories
 @EntityScan
 @EnableAspectJAutoProxy
-@EnableAsync
 @EnableCaching
 @EnableFeignClients
 public class BootcampIsServiceApplication {

@@ -48,11 +48,11 @@ public class JwtAuthenticationController {
         }
     }
 
-    @RequestMapping(value = "/tokenVerify", method = RequestMethod.POST)
-    public TokenValidityResponseDto checkTokenValidity(@RequestHeader("Authorization") String token) {
-        String username = jwtTokenUtil.getUsernameFromToken(token);
-        TokenValidityResponseDto tokenValidityResponseDto = new TokenValidityResponseDto();
-        tokenValidityResponseDto.setUsername(username);
-        return tokenValidityResponseDto;
-    }
+//    @RequestMapping(value = "/tokenVerify", method = RequestMethod.POST)
+//    public TokenValidityResponseDto checkTokenValidity(@RequestHeader("Authorization") String token) {
+//        String username = jwtTokenUtil.getUsernameFromToken(token);
+//        TokenValidityResponseDto tokenValidityResponseDto = new TokenValidityResponseDto();
+//        tokenValidityResponseDto.setUsername(username);
+//        return tokenValidityResponseDto;
+//    }
 }
